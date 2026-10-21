@@ -1,0 +1,8 @@
+{
+  "name": "Remix GO — Terminal Steampunk (Caldeira Pesada)",
+  "description": "Terminal industrial steampunk para caldeira pesada, controle de pressão, diretrizes e banco de cápsulas de dados.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,425 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #0b0a09;
+    background-image: 
+      radial-gradient(circle at 50% 12%, rgba(255, 140, 0, 0.12) 0%, transparent 60%),
+      radial-gradient(circle at 10% 45%, rgba(45, 36, 26, 0.5) 0%, transparent 50%),
+      radial-gradient(circle at 90% 75%, rgba(45, 36, 26, 0.5) 0%, transparent 50%),
+      linear-gradient(180deg, #141210 0%, #0d0c0b 50%, #080706 100%);
+    color: #e7e1df;
+    user-select: none;
+  }
+
+  h1, h2, h3, h4, .font-headline {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+/* 3D Realistic Industrial Rivets & Bolts */
+.iron-rivet {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, #8e867d 0%, #46413a 45%, #1c1a17 80%, #0b0a09 100%);
+  box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.95),
+    inset 0 1px 1px rgba(255, 255, 255, 0.35),
+    inset 0 -1px 1.5px rgba(0, 0, 0, 0.85);
+  border: 0.5px solid #23201d;
+  flex-shrink: 0;
+}
+
+.brass-bolt {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff1b8 0%, #d4a359 40%, #7d5718 75%, #3d2705 100%);
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.9),
+    0 0 1px #000000,
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.7),
+    inset 0 -1.5px 2px rgba(0, 0, 0, 0.7);
+  border: 0.5px solid #4a3407;
+  position: relative;
+  flex-shrink: 0;
+}
+.brass-bolt::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  right: 20%;
+  height: 1.5px;
+  background: #2b1c03;
+  transform: translateY(-50%) rotate(35deg);
+  box-shadow: 0 0.5px 0.5px rgba(255, 255, 255, 0.2);
+}
+
+/* Realistic 3D Cast Industrial Enclosure */
+.chassis-box {
+  background: linear-gradient(165deg, #282420 0%, #1b1917 40%, #11100e 100%);
+  box-shadow: 
+    0 12px 28px rgba(0, 0, 0, 0.95),
+    0 2px 6px rgba(0, 0, 0, 0.8),
+    inset 0 1px 1px rgba(255, 255, 255, 0.16),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.9);
+  border: 2px solid #3d3731;
+}
+
+/* Heavy Copper Pipe 3D Bar */
+.copper-pipe-3d {
+  background: linear-gradient(90deg, 
+    #4a2310 0%, 
+    #a6582a 20%, 
+    #f29b61 45%, 
+    #ffa569 55%, 
+    #b45d2b 75%, 
+    #3d1a0a 100%);
+  box-shadow: 
+    0 2px 6px rgba(0,0,0,0.85),
+    inset 0 1px 0 rgba(255,255,255,0.4),
+    inset 0 -1px 2px rgba(0,0,0,0.9);
+}
+.copper-pipe-vert {
+  background: linear-gradient(180deg, 
+    #4a2310 0%, 
+    #a6582a 20%, 
+    #f29b61 45%, 
+    #ffa569 55%, 
+    #b45d2b 75%, 
+    #3d1a0a 100%);
+  box-shadow: 
+    2px 0 8px rgba(0,0,0,0.9),
+    inset 1px 0 0 rgba(255,255,255,0.35),
+    inset -1px 0 2px rgba(0,0,0,0.9);
+}
+
+/* Plate Riveted Cartridge */
+.plate-riveted-cartridge {
+  background-color: #171513;
+  background-image: linear-gradient(180deg, rgba(32, 28, 24, 0.75) 0%, rgba(12, 11, 10, 0.9) 100%);
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.95), 0 3px 6px rgba(0,0,0,0.7);
+}
+
+/* Dark Glass Display Recessed Panel */
+.dark-glass-display-panel {
+  background-color: #080908;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(80, 250, 123, 0.08) 0%, transparent 70%),
+    linear-gradient(180deg, rgba(14, 16, 14, 0.9) 0%, rgba(5, 6, 5, 0.98) 100%);
+  box-shadow: 
+    inset 0 4px 12px rgba(0,0,0,0.98),
+    inset 0 0 24px rgba(0,0,0,0.9),
+    0 1px 1px rgba(255,255,255,0.12);
+  border: 1.5px solid #332d26;
+}
+
+/* Hazard Stripe Bar */
+.hazard-stripe-bar {
+  height: 16px;
+  background: repeating-linear-gradient(
+    -45deg,
+    #121110,
+    #121110 10px,
+    #f5b800 10px,
+    #f5b800 20px
+  );
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.9), inset 0 -1px 1px rgba(255,255,255,0.2);
+}
+
+/* Vacuum Tube Amber Filament Pulse */
+.filament-glow {
+  animation: warmFilament 2.8s infinite alternate cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+@keyframes warmFilament {
+  0% {
+    opacity: 0.82;
+    box-shadow: 0 0 8px #ff8c00, 0 0 16px rgba(255, 107, 0, 0.6), inset 0 0 5px #ffaa22;
+    filter: brightness(0.96) drop-shadow(0 0 4px #ff8c00);
+  }
+  38% {
+    opacity: 0.95;
+    box-shadow: 0 0 14px #ffaa22, 0 0 26px #ff6b00, inset 0 0 9px #ffdcc3;
+    filter: brightness(1.15) drop-shadow(0 0 10px #ffaa22);
+  }
+  65% {
+    opacity: 0.88;
+    box-shadow: 0 0 10px #ff8c00, 0 0 19px rgba(255, 85, 0, 0.7), inset 0 0 6px #ffaa22;
+    filter: brightness(1.02);
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 18px #ffaa22, 0 0 34px #ff4500, inset 0 0 11px #ffffff;
+    filter: brightness(1.28) drop-shadow(0 0 16px #ff7700);
+  }
+}
+
+.vacuum-filament-tube {
+  animation: tubeFilamentPulse 3.4s infinite ease-in-out;
+}
+@keyframes tubeFilamentPulse {
+  0%, 100% {
+    opacity: 0.78;
+    box-shadow: 0 0 14px rgba(255, 140, 0, 0.5), inset 0 0 10px rgba(255, 170, 34, 0.6);
+    filter: drop-shadow(0 0 6px rgba(255, 140, 0, 0.7));
+  }
+  22% {
+    opacity: 0.96;
+    box-shadow: 0 0 22px rgba(255, 170, 34, 0.85), inset 0 0 15px rgba(255, 220, 195, 0.85);
+    filter: drop-shadow(0 0 12px rgba(255, 170, 34, 0.95));
+  }
+  26% {
+    opacity: 0.85;
+  }
+  70% {
+    opacity: 0.92;
+    box-shadow: 0 0 18px rgba(255, 107, 0, 0.75), inset 0 0 12px rgba(255, 170, 34, 0.7);
+    filter: drop-shadow(0 0 9px rgba(255, 107, 0, 0.85));
+  }
+}
+
+/* 3D Machined Metal Button */
+.machined-btn {
+  background: linear-gradient(180deg, #443e37 0%, #292521 40%, #181614 100%);
+  border: 1px solid #6b6155;
+  box-shadow: 
+    0 4px 0 #0d0c0a,
+    0 6px 10px rgba(0,0,0,0.85),
+    inset 0 1px 1px rgba(255,255,255,0.3),
+    inset 0 -1px 2px rgba(0,0,0,0.8);
+  transition: all 0.1s ease;
+}
+.machined-btn:active {
+  transform: translateY(3px);
+  box-shadow: 
+    0 1px 0 #0d0c0a,
+    0 2px 4px rgba(0,0,0,0.9),
+    inset 0 2px 4px rgba(0,0,0,0.95);
+}
+
+/* Incandescent Emergency Trigger / Power Button */
+.incandescent-cta {
+  background: linear-gradient(180deg, #ff9f2e 0%, #e06000 35%, #943200 80%, #521800 100%);
+  border: 1.5px solid #ffba66;
+  text-shadow: 0 -1px 2px rgba(0,0,0,0.9), 0 1px 2px rgba(255,230,180,0.4);
+  transition: all 0.12s ease;
+  animation: incandescentThrob 3s infinite alternate ease-in-out;
+}
+@keyframes incandescentThrob {
+  0% {
+    box-shadow: 
+      0 5px 0 #3b1200,
+      0 8px 18px rgba(255, 115, 0, 0.45),
+      0 0 20px rgba(255, 90, 0, 0.35),
+      inset 0 2px 2px rgba(255,255,255,0.65),
+      inset 0 -3px 6px rgba(0,0,0,0.7);
+    filter: brightness(0.98);
+  }
+  50% {
+    box-shadow: 
+      0 5px 0 #3b1200,
+      0 9px 24px rgba(255, 140, 0, 0.65),
+      0 0 32px rgba(255, 100, 0, 0.55),
+      inset 0 2px 2px rgba(255,255,255,0.85),
+      inset 0 -3px 6px rgba(0,0,0,0.7);
+    filter: brightness(1.08);
+  }
+  100% {
+    box-shadow: 
+      0 5px 0 #3b1200,
+      0 10px 28px rgba(255, 160, 20, 0.75),
+      0 0 40px rgba(255, 110, 0, 0.65),
+      inset 0 2px 3px rgba(255,255,255,0.9),
+      inset 0 -3px 6px rgba(0,0,0,0.65);
+    filter: brightness(1.15);
+  }
+}
+.incandescent-cta:active {
+  transform: translateY(3px);
+  box-shadow: 
+    0 2px 0 #3b1200,
+    0 3px 10px rgba(255, 115, 0, 0.4),
+    inset 0 3px 6px rgba(0,0,0,0.9);
+}
+
+/* Stamped 3D GO Lettering */
+.heavy-stamped-text {
+  background: linear-gradient(180deg, #ebe3d3 0%, #c4b598 25%, #7a6f5b 55%, #383228 90%, #615643 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 3px 2px #0a0908) drop-shadow(0 6px 12px rgba(0,0,0,0.95)) drop-shadow(0 -1px 0 rgba(255,255,255,0.45));
+}
+
+/* Amber pilot lamp */
+.amber-pilot-lamp {
+  background: radial-gradient(circle at 35% 35%, #fff2b8 0%, #ffa524 45%, #b85000 80%, #471900 100%);
+  border: 1px solid #ffc266;
+  animation: pilotFlicker 3.2s infinite ease-in-out;
+}
+@keyframes pilotFlicker {
+  0%, 100% {
+    box-shadow: 0 0 8px #ff8c00, inset 0 1px 1px #ffffff;
+    filter: brightness(0.95);
+  }
+  45% {
+    box-shadow: 0 0 14px #ffaa22, 0 0 22px rgba(255, 140, 0, 0.7), inset 0 1.5px 2px #ffffff;
+    filter: brightness(1.2);
+  }
+  48% {
+    box-shadow: 0 0 7px #ff8c00, inset 0 1px 1px #ffffff;
+    filter: brightness(0.9);
+  }
+  52% {
+    box-shadow: 0 0 15px #ffaa22, 0 0 24px rgba(255, 140, 0, 0.8), inset 0 1.5px 2px #ffffff;
+    filter: brightness(1.25);
+  }
+  85% {
+    box-shadow: 0 0 10px #ff8c00, inset 0 1px 1px #ffffff;
+    filter: brightness(1.05);
+  }
+}
+
+.boiler-backlight-glow {
+  animation: boilerBacklight 4.2s infinite alternate ease-in-out;
+}
+@keyframes boilerBacklight {
+  0% {
+    opacity: 0.35;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.04);
+  }
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+}
+
+/* Steam Emissions Keyframes */
+.steam-puff-a {
+  animation: steamVentCycleA 5.6s infinite ease-out;
+  will-change: transform, opacity;
+}
+.steam-puff-b {
+  animation: steamVentCycleB 6.8s infinite ease-out 1.9s;
+  will-change: transform, opacity;
+}
+.steam-puff-c {
+  animation: steamVentCycleC 7.2s infinite ease-out 3.4s;
+  will-change: transform, opacity;
+}
+.steam-exhaust-vent {
+  animation: steamExhaustPlume 4.8s infinite ease-in-out;
+  will-change: transform, opacity;
+}
+
+@keyframes steamVentCycleA {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0) scale(0.6) rotate(0deg);
+    filter: blur(10px);
+  }
+  20% {
+    opacity: 0.45;
+    filter: blur(14px);
+  }
+  50% {
+    opacity: 0.35;
+    transform: translate3d(-14px, -24px, 0) scale(1.35) rotate(-6deg);
+    filter: blur(20px);
+  }
+  85% {
+    opacity: 0.12;
+    transform: translate3d(-26px, -46px, 0) scale(1.9) rotate(-14deg);
+    filter: blur(28px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(-34px, -62px, 0) scale(2.3) rotate(-20deg);
+    filter: blur(34px);
+  }
+}
+
+@keyframes steamVentCycleB {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0) scale(0.55) rotate(0deg);
+    filter: blur(9px);
+  }
+  22% {
+    opacity: 0.5;
+    filter: blur(13px);
+  }
+  55% {
+    opacity: 0.32;
+    transform: translate3d(18px, -28px, 0) scale(1.4) rotate(8deg);
+    filter: blur(22px);
+  }
+  88% {
+    opacity: 0.1;
+    transform: translate3d(30px, -52px, 0) scale(2.0) rotate(16deg);
+    filter: blur(30px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(38px, -70px, 0) scale(2.4) rotate(22deg);
+    filter: blur(36px);
+  }
+}
+
+@keyframes steamVentCycleC {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0) scale(0.65);
+    filter: blur(12px);
+  }
+  25% {
+    opacity: 0.4;
+    filter: blur(16px);
+  }
+  60% {
+    opacity: 0.28;
+    transform: translate3d(4px, -36px, 0) scale(1.6) rotate(-3deg);
+    filter: blur(24px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(8px, -75px, 0) scale(2.2) rotate(4deg);
+    filter: blur(36px);
+  }
+}
+
+@keyframes steamExhaustPlume {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.9) translateY(0);
+    filter: blur(16px);
+  }
+  50% {
+    opacity: 0.52;
+    transform: scale(1.22) translateY(-10px);
+    filter: blur(22px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .filament-glow,
+  .vacuum-filament-tube,
+  .incandescent-cta,
+  .amber-pilot-lamp,
+  .boiler-backlight-glow,
+  .steam-puff-a,
+  .steam-puff-b,
+  .steam-puff-c,
+  .steam-exhaust-vent {
+    animation: none !important;
+  }
+}
